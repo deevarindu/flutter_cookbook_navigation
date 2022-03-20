@@ -10,7 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Named Routes Demo',
+      title: 'Returning Data Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,7 +33,7 @@ class App extends StatelessWidget {
         assert(false, 'Need to implement ${settings.name}');
         return null;
       },
-      home: const HomeScreen(),
+      home: const HomeScreen2(),
     );
   }
 }
