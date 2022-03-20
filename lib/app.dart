@@ -9,11 +9,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Navigation Basics',
+      title: 'Named Routes Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstRoute(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+      },
     );
   }
 }
