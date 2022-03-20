@@ -10,7 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Named Routes Demo',
+      title: 'Navigation with arguments',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
