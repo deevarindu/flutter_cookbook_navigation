@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 import 'screens/screens.dart';
 import 'widgets/widgets.dart';
 
+class Todo {
+  final String title;
+  final String description;
+
+  const Todo(this.title, this.description);
+}
+
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
@@ -10,30 +17,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Returning Data Demo',
+      title: 'Passing Data',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        ExtractArgumentsScreen.routeName: (context) =>
-            const ExtractArgumentsScreen(),
-      },
-      onGenerateRoute: (settings) {
-        if (settings.name == PassArgumentsScreen.routeName) {
-          final args = settings.arguments as ScreenArguments;
-          return MaterialPageRoute(
-            builder: (context) {
-              return PassArgumentsScreen(
-                title: args.title,
-                message: args.message,
-              );
-            },
-          );
-        }
-        assert(false, 'Need to implement ${settings.name}');
-        return null;
-      },
-      home: const HomeScreen2(),
+      home: TodosScreen(
+        todos: List.generate(
+          20,
+          (i) => Todo(
+            'Todo $i',
+            'A description of what needs to be done for Todo $i',
+          ),
+        ),
+      ),
     );
   }
 }

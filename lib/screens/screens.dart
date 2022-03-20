@@ -5,3 +5,5 @@ export 'named_routes_screen.dart';
 export 'home_screen.dart';
 export 'home_screen2.dart';
 export 'selection_screen.dart';
+export 'to_do_screen.dart';
+export 'detail_screen2.dart';
